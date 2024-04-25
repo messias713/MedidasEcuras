@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medidas ao quadrado<br>Conversão.</title>
+</head>
+<body>
+  <h1>Conversão de unidades de área</h1>
+  
+  <label for="area">Digite a área em centímetros quadrados:</label>
+  <input type="number" id="area">
+  <button onclick="converter()">Converter</button>
+  
+  <p id="resultado"></p>
+  
+  <script>
+    function converter() {
+      const areaCm2 = parseFloat(document.getElementById("area").value);
+      
+      const areaDm2 = areaCm2 / 100;
+      const areaM2 = areaCm2 / 10000;
+      const areaKm2 = areaCm2 / 10000000000;
+      
+      document.getElementById("resultado").innerHTML = `
+        Área em decímetros quadrados: ${areaDm2} dm² <br>
+        Área em metros quadrados: ${areaM2} m² <br>
+        Área em quilômetros quadrados: ${areaKm2} km²
+      `;
+    }
+  </script>
+</body>
+</html>
