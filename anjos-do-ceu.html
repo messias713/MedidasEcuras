@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+  <title>Anjos e frases do céu.</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .anjo {
+      position: absolute;
+      animation: cair 5s linear infinite;
+    }
+    @keyframes cair {
+      0% { top: -100px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+    h2{
+    background-color:pink;
+    }
+  </style>
+</head>
+<body>
+<h2>Anjos e frases do céu.</h2>
+
+<script>
+function criarAnjo() {
+  const frase = document.createElement('div');
+  frase.innerText = 'Deus é amor! Jesus o salvador. Maria mãe da luz.';
+  frase.style.position = 'absolute';
+  
+	const img = document.createElement('img');
+	img.src = 'https://media.tenor.com/PwAswhAxpLoAAAAC/city-of-angels-la.gif'; // Insira o caminho para a imagem do "anjo" aqui
+	img.className = 'anjo';
+  
+	const posX = Math.random() * window.innerWidth;
+	img.style.left = `${posX}px`;
+  
+	document.body.appendChild(img);
+	document.body.appendChild(frase);
+}
+</script>
+
+<button onclick="criarAnjo()">Chamar Anjos</button>
+
+</body>
+</center>
+</html>
+
