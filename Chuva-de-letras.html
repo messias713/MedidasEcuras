@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+    <title>Chuva de Letras</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .letter {
+            position: absolute;
+            animation: falling 2s linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<h1 style="color:#DC143C;">Chuva de letras e poesia.</h1>
+<body>
+    <div id="container"></div>
+ <pre style="color:#FF0000;">
+ <strong>
+ Toda a luz é caminho,
+ sendo exibida em interior.
+ Que paz, esta verdade de amor.
+ Assim sendo, no ser,
+ doar, sem nada esperar,
+ é plantar.
+ A semente, no aprendizado amar,
+ estar presente em disposição.
+ Ilumina em luz, aquece o coração.
+ </strong>
+ <img src="https://media.tenor.com/4bvxuaYmVx4AAAAC/soothingly-raining.gif"width="40%"height="30%">
+ </pre>
+    <script>
+        const container = document.getElementById('container');
+        const letters = 'abcdefghijklmnopqrstuvwxyz';
+        
+        function createLetter() {
+            const letter = document.createElement('div');
+            letter.classList.add('letter');
+            letter.innerText = letters[Math.floor(Math.random() * letters.length)];
+            letter.style.left = Math.random() * 100 + 'vw';
+            container.appendChild(letter);
+
+            setTimeout(() => {
+                letter.remove();
+            }, 2000);
+        }
+        
+        setInterval(createLetter, 100);
+    </script>
+</body>
+</center>
+</html>
