@@ -1,0 +1,32 @@
+<html>
+<meta charset="utf-8">
+<center><h1 style="color:purple;">Viagens de amor!</h1></center>
+<pre id="sliding-text" style="white-space: nowrap;">
+A luz é amor,
+que transforma a dor em esperança.<br>
+<img src="https://media.tenor.com/HF4MJ1vOT2QAAAAC/vai-na-f%C3%A9-novela-vai-na-f%C3%A9.gif"width="60%"height="40%"><br>
+Tudo o que é interior, é alma resplendor.<br>
+<img src="https://media.tenor.com/iWtA_90ysyoAAAAC/f%C3%A9-deus.gif"width="60%"height="40%"><br>
+O caminho em fé, sempre encontra a porta da cruz! JESUS.<br>
+<img src="https://media.tenor.com/u7Hu_vw4jyEAAAAC/la-fe-en-dios-mueve-montanas-jesus.gif"width="60%"height="40%"><br>
+Quem procura encontra, quem acredita eleva.<br>A entrada nas portas divinas.<br>
+<img src="https://media.tenor.com/9Xh45zxN3aoAAAAC/une-prire.gif"width="60%"height="40%"><br>
+Toda a energia índigo. É ensinada por Deus, escolhida do divino.<br>
+<img src="https://media.tenor.com/-UQrhzohdIEAAAAC/fallen-angel-effects.gif"width="60%"height="40%">
+<pre>
+<script>
+var slidingText = document.getElementById('sliding-text');
+var xPosition = slidingText.offsetWidth;
+
+function slideText() {
+  xPosition--;
+  if (xPosition < -slidingText.scrollWidth) {
+    xPosition = slidingText.offsetWidth;
+  }
+  slidingText.style.transform = "translateX(" + xPosition + "px)";
+  requestAnimationFrame(slideText);
+}
+
+slideText();
+</script>
+</html>
