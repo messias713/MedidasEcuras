@@ -1,0 +1,62 @@
+<html>
+<meta charset="utf-8">
+
+<h1 style="color:#DC143C;">Chuva e sol de poemas.</h1>
+<h2>Click varias vezes em pontos diferentes,<br>perto do sol<br>e vai fazer chover.</h2>
+<pre background="color:pink;">
+A chuva, chuvinhar
+amor, verdade de amar,
+que chegue em acontecer,
+vida é tudo.
+No aprender a viver.
+</pre>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script>
+let solX = 150;
+let solY = 100;
+let chuva = [];
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+
+  // Desenha o sol radiante
+  fill(255, 255, 0);
+  ellipse(solX, solY, 50, 50);
+  
+  // Desenha a chuva
+  for (let i = 0; i < chuva.length; i++) {
+    chuva[i].show();
+    chuva[i].move();
+  }
+}
+
+function mouseClicked() {
+  chuva.push(new Rain(mouseX, mouseY));
+}
+
+class Rain {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  
+  show() {
+    stroke(0);
+    line(this.x, this.y, this.x, this.y + 10);
+  }
+  
+  move() {
+    this.y += 5;
+    if (this.y > height) {
+      this.y = 0;
+    }
+  }
+}
+
+</script>
+
+</html>
